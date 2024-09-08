@@ -7,9 +7,9 @@ pipeline {
                 withCredentials([azureServicePrincipal('static-web-app')]) {
                     sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID --allow-no-subscriptions'
                 }
-                npx swa init --yes
-                npx swa build
-                npx swa login --resource-group test-statc-web-apps --app-name vue-test
+                sh 'npx swa init --yes'
+                sh 'npx swa build'
+                sh 'npx swa login --resource-group test-statc-web-apps --app-name vue-test'
             }
         }
     }

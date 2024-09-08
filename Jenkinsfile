@@ -14,7 +14,7 @@ pipeline {
                 sh 'npx swa init --yes'
                 sh 'npx swa build'
                 sh 'npx swa login --resource-group test-statc-web-apps --app-name vue-test'
-                sh 'npx swa deploy ./dist --deployment-token 2cf1a9fafee37b6b95972ab45bd36bb601ea3ea8a358c1a9524078dc78ce0c355-4f431a87-e2f2-4c6c-a047-c5ac431238e0000292686'
+                sh 'npx swa deploy --deployment-token 2cf1a9fafee37b6b95972ab45bd36bb601ea3ea8a358c1a9524078dc78ce0c355-4f431a87-e2f2-4c6c-a047-c5ac431238e0000292686'
                 sh 'az logout'
             }
         }

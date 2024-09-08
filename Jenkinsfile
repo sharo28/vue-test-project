@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo "My client id is $AZURE_CLIENT_ID"
-                echo "My tenant id is $AZURE_TENANT_ID"
-                echo "My subscription id is $AZURE_SUBSCRIPTION_ID"
+                withCredentials([azureServicePrincipal('credentials_id')]) {
+                    sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+                }
             }
         }
     }

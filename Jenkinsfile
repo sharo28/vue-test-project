@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World 3'
+                echo "My client id is $AZURE_CLIENT_ID"
+                echo "My tenant id is $AZURE_TENANT_ID"
+                echo "My subscription id is $AZURE_SUBSCRIPTION_ID"
             }
         }
     }

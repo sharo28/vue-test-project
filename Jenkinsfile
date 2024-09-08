@@ -9,7 +9,6 @@ pipeline {
                 }
                 echo '1'
                 echo '2'
-                sh 'npx swa build'
                 echo '3'
                 sh 'npx swa login --resource-group test-statc-web-apps --app-name vue-test'
                 echo '4'

@@ -12,7 +12,7 @@ pipeline {
                 sh 'npx swa init --yes'
                 sh 'npx swa build'
                 sh 'npx swa login --resource-group test-statc-web-apps --app-name vue-test'
-                sh 'npx swa deploy --env production'
+                sh 'npx swa deploy'
             }
         }
     }

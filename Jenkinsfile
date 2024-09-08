@@ -6,6 +6,7 @@ pipeline {
             steps {
                 withCredentials([azureServicePrincipal('static-web-app')]) {
                     sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID --allow-no-subscriptions'
+                    sh 'az account set --subscription $AZURE_SUBSCRIPTION_ID'
                 }
                 sh 'npm install -D @azure/static-web-apps-cli'
                 sh 'npx swa init --yes'
